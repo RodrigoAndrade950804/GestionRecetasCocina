@@ -1,14 +1,22 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <Shell
-    x:Class="GestionRecetasCocina.AppShell"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:local="clr-namespace:GestionRecetasCocina"
-    Title="GestionRecetasCocina">
+    xmlns:views="clr-namespace:GestionRecetasCocina.Views"
+    x:Class="GestionRecetasCocina.AppShell">
 
-    <ShellContent
-        Title="Home"
-        ContentTemplate="{DataTemplate local:MainPage}"
-        Route="MainPage" />
+    <ShellItem Title="Agregar Receta" Icon="add.png">
+        <ShellContent ContentTemplate="{DataTemplate views:AgregarRecetaPage}" />
+    </ShellItem>
+
+    <ShellItem Title="Lista Recetas" Icon="list.png">
+        <ShellContent ContentTemplate="{DataTemplate views:ListaRecetasPage}" />
+    </ShellItem>
+
+    <ShellItem Title="Logs" Icon="log.png">
+        <ShellContent ContentTemplate="{DataTemplate views:LogsPage}" />
+    </ShellItem>
 
 </Shell>
+
+

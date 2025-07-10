@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GestionRecetasCocina.Views.AgregarRecetaPage"
+             Title="Agregar Receta">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="15">
+
+            <Label Text="Rodrigo Andrés Andrade Jaramillo" FontSize="18" HorizontalOptions="Center" />
+            <Label Text="04/08/1995" FontSize="14" HorizontalOptions="Center" />
+
+            <Label Text="Nombre de la receta" />
+            <Entry Placeholder="Nombre de la receta" Text="{Binding Nombre}" />
+
+            <Label Text="Ingredientes" />
+            <Entry Placeholder="Ingredientes" Text="{Binding Ingredientes}" />
+
+            <Label Text="Tiempo de preparación (min)" />
+            <Entry Keyboard="Numeric" Text="{Binding TiempoPreparacionMinutos}" />
+
+            <HorizontalStackLayout VerticalOptions="Center" Spacing="10">
+                <CheckBox IsChecked="{Binding EsVegetariana}" VerticalOptions="Center" />
+                <Label Text="¿Es vegetariana?" VerticalOptions="Center" />
+            </HorizontalStackLayout>
+
+            <Button Text="Guardar Receta" Command="{Binding GuardarCommand}" />
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

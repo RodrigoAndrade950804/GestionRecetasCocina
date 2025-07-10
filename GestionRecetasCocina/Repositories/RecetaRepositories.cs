@@ -7,19 +7,19 @@ using System.Threading.Tasks;
 
 namespace GestionRecetasCocina.Repositories
 {
-    public class RecetaRepository
+    public class RecetaRepositories
     {
         private readonly SQLiteAsyncConnection _database;
 
         // Constructor principal
-        public RecetaRepository(string dbPath)
+        public RecetaRepositories(string dbPath)
         {
             _database = new SQLiteAsyncConnection(dbPath);
             _database.CreateTableAsync<Receta>().Wait();
         }
 
         // Constructor por defecto
-        public RecetaRepository() : this(Path.Combine(
+        public RecetaRepositories() : this(Path.Combine(
             Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "recetas.db"))
         {
         }

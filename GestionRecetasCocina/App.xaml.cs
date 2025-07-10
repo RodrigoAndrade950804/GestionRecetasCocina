@@ -1,15 +1,15 @@
-﻿namespace GestionRecetasCocina
-{
-    public partial class App : Application
-    {
-        public App()
-        {
-            InitializeComponent();
-        }
+﻿using GestionRecetasCocina.Views;
 
-        protected override Window CreateWindow(IActivationState? activationState)
-        {
-            return new Window(new AppShell());
-        }
+namespace GestionRecetasCocina;
+
+public partial class App : Application
+{
+    public App(AgregarRecetaPage agregarRecetaPage)
+    {
+        InitializeComponent();
+
+        
+        MainPage = new NavigationPage(agregarRecetaPage);
     }
 }
+
